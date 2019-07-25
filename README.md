@@ -1,2 +1,3 @@
 # UI for my ROTBOT application
-sdfsf
+npm install bootstrap jquery
+npm install --save font-awesome angular-font-awesome
