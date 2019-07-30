@@ -11,13 +11,14 @@ const httpOptions = {
 })
 export class UserService {
 
-  private userUrl:string ='http://localhost:2010/api/demo';
+  private userUrl:string ='http://localhost:2011/api/demo';
+  // private userUrl:string ='https://kite.trade/connect/login?api_key=1eemehdad6ljgh42';
 
   constructor(private http:HttpClient) { }
 
   public createUser(user : User): Observable<User> {
     console.log("mehtod callded..")
-    // return this.http.post<User>(this.userUrl,user);
-    return this.http.get<User>(this.userUrl);
+    return this.http.post<User>(this.userUrl,user);
+    // return this.http.get<User>(this.userUrl);
   }
 }

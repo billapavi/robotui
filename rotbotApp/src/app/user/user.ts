@@ -1,9 +1,13 @@
 export class User {
-    private  email: String;
-	private firstName: String;
-	private lasttName: String;
-	private phone: String;
-	private password: String;
-	private question: String;
-	private answer: String;
+    public  email: String;
+	public firstName: String;
+	public lastName: String;
+	public phone: String;
+	public gender: String;
+	public password: String;
+	public question: String;
+	public answer: String;
+	public seckey: String;
+	public apikey: String;
+	// private : String;
 }
