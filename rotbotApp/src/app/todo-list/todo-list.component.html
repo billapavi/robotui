@@ -1,0 +1,23 @@
+<table>
+    <caption>My Todd </caption>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>descrpition</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr>
+            <td>
+                {{todo.id}}
+            </td>
+            <td>{{todo.descrpition}}</td>
+        </tr> -->
+        <tr *ngFor="let todos of todo">
+            <td>{{todos.id}}</td>
+            <td>{{todos.descrpition}}</td>
+
+        </tr>
+    </tbody>
+
+</table>
