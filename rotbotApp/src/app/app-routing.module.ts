@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { RegisterComponent } from './register/register.component';
+import { SummaryComponent } from './summary/summary.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'employees',component: EmployeeListComponent},
   {path:'register',component: RegisterComponent},
   {path:'login',component: LoginComponent},
+  {path:'summary',component: SummaryComponent},
   {path:'welcome/:email',component: WelcomeComponent},
   {path:'todo-list',component: TodoListComponent},
   {path:'**',component: ErrorComponent}

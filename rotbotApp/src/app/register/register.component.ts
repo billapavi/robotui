@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../user/user.service';
+import { UserService, mycustomclass } from '../user/user.service';
 import { User } from '../user/user';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
@@ -12,7 +12,8 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   user: User = new User();
   public userForm :FormGroup;
-  constructor(private router: Router,private userService: UserService,private fb :FormBuilder) {
+  public summaryForm :FormGroup;
+  constructor(private router: Router,private userService: UserService,private fb :FormBuilder,private summarycustome:mycustomclass) {
     
    }
 
@@ -30,6 +31,12 @@ export class RegisterComponent implements OnInit {
       answer : new FormControl(''),
       
     });
+    this.summaryForm = this.fb.group({
+      gd : new FormControl(""),
+      gp : new FormControl(""),
+      tg : new FormControl(""),
+      tl : new FormControl(""),
+    })
   }
   createUsers(): void{
     console.log("mehod called..")
@@ -44,6 +51,14 @@ export class RegisterComponent implements OnInit {
     // this.user.firstName = this.userForm.controls.firstname.value;
     this.userService.createUser(this.user).subscribe(data=>{
       alert("user Created successfully..")
+    })
+  }
+  getSummary(): void{
+    console.log('getsummary called..')
+    this.userService.summaryDetails().subscribe(data=>{
+      console.log(data.gd)
+      
+      alert("summary Created successfully.."+data.gd)
     })
   }
 }

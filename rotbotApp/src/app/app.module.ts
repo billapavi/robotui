@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,6 +16,11 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SummaryComponent } from './summary/summary.component';
+import {BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CusdateComponent } from './cusdate/cusdate.component';
+import { mycustomclass } from './user/user.service';
+
 
 
 @NgModule({
@@ -31,16 +37,20 @@ import { HttpClientModule } from '@angular/common/http';
     TodoListComponent,
     NavBarComponent,
     RegisterComponent,
+    SummaryComponent,
+    CusdateComponent,
        
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [mycustomclass],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

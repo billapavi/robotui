@@ -1,0 +1,40 @@
+<div class="container-fluid alert-success">
+
+    <div class="row">
+        <div class="row container-fluid">
+            <div class="col-xl">
+                <div class="row">
+
+                    <div class="col">
+                        Top gainers
+                        {{topGN}}
+                    </div>
+                    <div class="col">
+                       Top loosers
+                       {{topLS}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                       Gap ups
+                       {{gapUP}}
+                    </div>
+                    <div class="col-sm">
+                        Gap downs
+                        {{gapDw}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+               Price reversals
+            </div>
+
+        </div>
+    </div>
+    <div >
+     
+       <app-cusdate></app-cusdate>
+        <button type="button" class="btn btn-success"  (click)="getSummary()" >Summary</button>
+     </div>
+</div>

@@ -9,9 +9,12 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class UserService {
 
   private userUrl:string ='http://localhost:2011/api/demo';
+  private summaryUrl:string ='http://localhost:2011/api/summary';
   // private userUrl:string ='https://kite.trade/connect/login?api_key=1eemehdad6ljgh42';
 
   constructor(private http:HttpClient) { }
@@ -21,4 +24,19 @@ export class UserService {
     return this.http.post<User>(this.userUrl,user);
     // return this.http.get<User>(this.userUrl);
   }
+  public summaryDetails(): Observable<mycustomclass> {
+    console.log("summaryDetails mehtod callded..")
+    return this.http.get<mycustomclass>(this.summaryUrl); 
+    // return this.http.get<User>(this.userUrl); 
+  }
 }
+export class mycustomclass{
+  public gd: string[];
+  public gu: string[];
+  public tg: string[];
+  public tl: string[];
+  constructor(){
+
+  }
+}
+
