@@ -8,6 +8,7 @@ import { ErrorComponent } from './error/error.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { RegisterComponent } from './register/register.component';
 import { SummaryComponent } from './summary/summary.component';
+import { LoadDataComponent } from './load-data/load-data.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'summary',component: SummaryComponent},
   {path:'welcome/:email',component: WelcomeComponent},
   {path:'todo-list',component: TodoListComponent},
+  {path:'loadData',component: LoadDataComponent},
   {path:'**',component: ErrorComponent}
 ];
 

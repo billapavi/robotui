@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule, ElementRef } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, DefaultValueAccessor } from '@angular/forms';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,9 @@ import { SummaryComponent } from './summary/summary.component';
 import {BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CusdateComponent } from './cusdate/cusdate.component';
 import { mycustomclass } from './user/user.service';
+import { LoadDataComponent } from './load-data/load-data.component';
+import { DatePipe } from '@angular/common';
+import { BsDropdownModule, BsDropdownDirective } from 'ngx-bootstrap/dropdown';
 
 
 
@@ -39,18 +42,20 @@ import { mycustomclass } from './user/user.service';
     RegisterComponent,
     SummaryComponent,
     CusdateComponent,
+    LoadDataComponent,
        
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [mycustomclass],
+  providers: [mycustomclass,DatePipe,BsDropdownDirective,DefaultValueAccessor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

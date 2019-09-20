@@ -1,0 +1,56 @@
+
+<form [formGroup]="dayForm">
+        <div class="row">
+                <div class="col">
+                        
+                          <input type="text"
+                            class="form-control"
+                            formControlName="key"
+                />                            
+                        </div>
+                        <div class="col">
+                            
+                            <button class="btn btn-success" (click)="loadDayData()" [attr.aria-expanded]="daterangepicker.isOpen">Activate Kite Account</button>
+
+                      </div>
+        </div>
+        
+    </form>
+    <form #mindata="ngForm" [formGroup]="minForm" >
+                <div class="row">
+                        <div class="col">
+                                <select  class="form-control btn btn-outline-primary" formControlName="exchange">
+                                        <option selected value="NSE">NSE</option>
+                                        <option value="FO">FO</option>
+                                        
+                                      </select>
+                                    </div>
+                        <div class="col">
+                        <select  class="form-control btn btn-outline-primary" formControlName="daydrp">
+                                <option selected value="day">Day</option>
+                                <option value="minute">Minute</option>
+                                
+                              </select>
+                            </div>
+                          
+                        <div class="col">
+                                
+                                  <input type="text"
+                                    class="form-control"
+                                    formControlName="dateRange"
+                                    #daterangepicker="bsDaterangepicker"
+                                    bsDaterangepicker
+                                    [bsConfig]="{ rangeInputFormat: 'MM/DD/YYYY',rangeOutputFormat: 'MM/DD/YYYY' }">
+                                    
+                                    
+                                </div>
+                                <div class="col">
+                                    
+                                    <button class="btn btn-success" (click)="loadMinData(mindata)" [attr.aria-expanded]="daterangepicker.isOpen">Load Minute data</button>
+        
+                              </div>
+                </div>
+
+
+    </form>
+        

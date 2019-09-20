@@ -32,9 +32,26 @@
 
         </div>
     </div>
+    <form #sumdata="ngForm" [formGroup]="summarydataform" >
+
+            <div class="row">
+                    <div class="col">
+                            <select  class="form-control btn btn-outline-primary" formControlName="updw">
+                                    <option selected value="up">UP</option>
+                                    <option value="dw">DOWN</option>
+                                    
+                                  </select>
+                                </div>
+                            
+                            </div>
+                            
+                            </form>
+    
     <div >
-     
-       <app-cusdate></app-cusdate>
+        <input type="text" name="date" id="date" bsDatepicker [(ngModel)]="expDate" >
+       <!--<app-cusdate></app-cusdate> -->
         <button type="button" class="btn btn-success"  (click)="getSummary()" >Summary</button>
+        <button type="button" class="btn btn-success"  (click)="loadDataRest()" >Summary</button>
      </div>
+  <div>{{gporgd}}</div>
 </div>
